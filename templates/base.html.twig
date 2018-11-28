@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css',null) }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css',null) }}">
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    <div class="row mymenu">
+        <ul class="list-inline ">
+            <li><a href="{{ path('home') }}">WorldMap</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="">Listes Complete</a></li>
+            <li><a href="#">Ajouter</a></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+{#<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/vue.js') }}"></script> #}
+</body>
+</html>

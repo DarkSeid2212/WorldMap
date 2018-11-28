@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 lebien">
+                <h2>{{ property.title }}</h2>
+                <table class="table table-light table-dark">
+                    <tr>
+                        <td><strong>Vendu par</strong></td>
+                        <td>{{ property.lenom }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Surface</strong></td>
+                        <td>{{ property.surface}} m<sup>2</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nombre de chambres :</strong></td>
+                        <td>{{ property.rooms }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Localisé à :</strong></td>
+                        <td>{{ property.city }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Description :</strong></td>
+                        <td>{{ property.description }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prix</strong></td>
+                        <td>{{ property.price}} Francs CFA</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

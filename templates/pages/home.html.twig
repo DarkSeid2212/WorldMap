@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+ {% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('assets/css/home.css',null) }}">{% endblock %}
+{% block body %}
+    <div class="container">
+        {{ parent() }}
+        <div class="row">
+            <div class="col-lg-6 vendeur">
+                <h2 class="bcbg">Les Derniers vendeurs</h2>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Ville</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for property in properties %}
+
+                        <tr>
+                            <td>{{ property.lenom }}</td>
+                            <td>{{ property.description }}</td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-6">
+                <h2>Les derniers Biens</h2>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Ville</th>
+                        <th>Prix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for property in properties %}
+                    <tr>
+                        <td>{{ property.city }}</td>
+                        <td>{{ property.price }} Francs CFA</td>
+                    </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Last Introduced</h2>
+                <table class="table-bordered table">
+                    <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Surface</th>
+                        <th>Pieces</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for property in properties %}
+                        <tr>
+                            <td><a href="{{path('property.show',{slug: property.slug, id: property.id})}}">{{ property.title }}</a></td>
+                            <td>{{ property.surface }} m<sup>2</sup></td>
+                            <td>{{ property.rooms }} Chambres</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    {#   #}
+{% endblock %}
