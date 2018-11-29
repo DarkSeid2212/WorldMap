@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        <h1 class="site-header">Table d'edition de {{ property.title }}</h1>
+        <div class="contenu mt-4">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-lg-6 "> {{ form_row(form.title) }}</div>
+                <div class="col-lg-6 "> {{ form_row(form.lenom) }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 "> {{ form_row(form.description) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 "> {{ form_row(form.surface) }}</div>
+                <div class="col-lg-3 "> {{ form_row(form.heat) }}</div>
+                <div class="col-lg-3 "> {{ form_row(form.rooms) }}</div>
+                <div class="col-lg-3 "> {{ form_row(form.bedrooms) }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 "> {{ form_row(form.address) }}</div>
+                <div class="col-lg-4 "> {{ form_row(form.city) }}</div>
+                <div class="col-lg-4 "> {{ form_row(form.postal_code) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">{{ form_row(form.price) }}</div>
+                <div class="col-lg-1">{{ form_row(form.sold) }}</div>
+            </div>
+            {{ form_rest(form) }}
+            <button class="btn btn-primary" type="submit">Save</button>
+            {{ form_end(form) }}
+        </div>
+
+
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores consectetur impedit iure laudantium
+            natus sunt ut. Asperiores cupiditate expedita impedit inventore ipsam porro quisquam repellat repellendus
+            sapiente voluptas? Sunt?
+        </div>
+        <div>Cupiditate eos incidunt minus nam quod vel. Accusamus consequuntur dolore dolorem dolorum eius explicabo
+            labore modi molestiae, nam nemo, non officia pariatur quas quis quo quos reprehenderit, rerum tempora
+            voluptatibus!
+        </div>
+        <div>Ad amet aperiam autem culpa doloribus ea eius explicabo ipsam iure maxime molestiae nihil officiis, quam
+            quia quidem repellendus sequi sunt vel. Facere, sit, voluptatem. Architecto culpa illo nam optio.
+        </div>
+        <div>Aspernatur distinctio earum enim minus nihil, ratione suscipit vel. Amet, consequatur corporis dolorum ea
+            eligendi enim esse laborum libero magnam minus mollitia neque nobis perspiciatis porro recusandae sit
+            tempore, temporibus.
+        </div>
+        <div>Ab accusantium aliquam amet aperiam corporis culpa, cupiditate eveniet exercitationem facere id in ipsa
+            libero minima, nisi odit perspiciatis placeat possimus quas quis rem reprehenderit repudiandae sint tempore
+            tenetur voluptate.
+        </div>
+        <div>Alias, repellendus, temporibus? Accusamus alias assumenda, cum, distinctio dolores eligendi enim incidunt
+            nihil possimus quidem ratione similique veritatis! Aliquam cupiditate id laboriosam nobis, possimus quos
+            sunt ut vitae voluptatem voluptatum.
+        </div>
+        <div>Aliquam amet cum cumque earum expedita explicabo, fugiat minima natus officia, optio pariatur perferendis
+            placeat quisquam reiciendis repudiandae, sint voluptate! Ad commodi deleniti exercitationem explicabo non
+            omnis repellendus, totam? Deserunt!
+        </div>
+        <div>Animi at blanditiis dicta enim expedita harum inventore, laborum laudantium nam natus neque odit
+            praesentium quam qui ratione, repellendus tenetur velit veritatis voluptate voluptates. Accusantium impedit
+            minus quod ratione tempore.
+        </div>
+        <div>Aliquam doloribus ex explicabo fuga inventore, laboriosam laudantium odit? Ab accusamus eligendi explicabo
+            facere illo minus mollitia nihil perferendis provident quis saepe vitae, voluptas! Expedita nam odio
+            quibusdam ratione tempora!
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}

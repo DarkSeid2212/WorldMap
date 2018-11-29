@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ parent() }}
+
+    <style>
+        .lered:hover, .lered:visited {
+            background: linear-gradient(
+                    hsl(7, 90%, 52%),
+                    hsl(7, 60%, 31%)
+            );
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        .monboutton:hover, .monboutton:visited {
+            background: linear-gradient(
+                    hsl(120, 90%, 54%),
+                    hsl(120, 60%, 31%)
+            );
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        .monboutton, .lered {
+            background: linear-gradient(
+                    hsl(220, 90%, 54%),
+                    hsl(220, 60%, 31%)
+            );
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        .ajouter {
+            background: linear-gradient(
+                    hsl(59, 90%, 51%),
+                    hsl(56, 60%, 31%)
+            );
+        }
+    </style>
+
+
+    <div class="container">
+        <h1>Les Bien vu par le Admin</h1>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="row">
+            <div class="col-lg-6">
+                <table class="table table-responsive ">
+                    <thead>
+                    <tr>
+                        <th>Nom du bien</th>
+                        <th></th>
+                        <th></th>
+                        <th><a href="{{ path('admin.add') }}" class="btn btn-primary ajouter">Ajouter</a></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for property in properties %}
+                        <tr>
+                            <td>{{ property.title }}</td>
+                            <td><a href="{{ path('admin.edit',{ id: property.id }) }}" class="btn monboutton">Editer</a>
+                            </td>
+                            <td>
+                                <form action="{{ path('admin.edit',{ id: property.id }) }}" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete'~ property.id) }}">
+                                    <button class=" btn lered">Supprimer</button>
+                                </form>
+                            </td>
+                            <td></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda, commodi deserunt dolorum ea eius
+            est et, exercitationem facilis in maxime nemo nihil non tenetur, ullam vel vero voluptatem voluptatibus.
+        </div>
+        <div>Accusantium fugiat molestias quis! Accusantium animi commodi dicta ducimus, eius exercitationem hic id
+            impedit laboriosam modi provident quae quas quasi quibusdam, quisquam quo, quos repellat repellendus rerum
+            temporibus veniam voluptate!
+        </div>
+        <div>Accusantium, aliquid consequatur dignissimos dolorem dolorum expedita harum illo in iure iusto libero
+            magnam magni maiores, nemo nostrum obcaecati placeat quod reiciendis sapiente sunt temporibus unde,
+            veritatis! Dignissimos nesciunt, nostrum.
+        </div>
+        <div>Nostrum, quibusdam, repellat! Accusantium alias aliquam architecto aspernatur atque cupiditate delectus
+            deleniti distinctio dolor facere, inventore itaque necessitatibus odio praesentium, quae ratione recusandae
+            tempora. Ex iure minima odit optio tenetur?
+        </div>
+        <div>A accusantium ad autem corporis deleniti dolorum error est eum expedita, fugit in inventore ipsam, magni,
+            maxime nihil odio omnis quo quos rem repellat sapiente veniam vero vitae voluptatibus voluptatum.
+        </div>
+        <div>Ipsa nam quidem unde. Animi asperiores autem beatae consectetur, cum deleniti dolore dolores enim esse et
+            hic ipsum odit officia pariatur perferendis perspiciatis placeat possimus, quaerat quos repellendus ut
+            voluptate.
+        </div>
+        <div>Amet at dolores eaque eligendi enim esse ex exercitationem expedita illum ipsum libero maiores molestias
+            nobis officiis pariatur provident quae quas, quod ratione recusandae reiciendis saepe sequi soluta tempore
+            vel?
+        </div>
+        <div>Ab animi asperiores atque blanditiis cum deleniti, dolore dolorum est eveniet facere illo minus officia
+            omnis pariatur perspiciatis quo quos reiciendis repellat saepe tenetur totam ullam voluptatum. Facilis,
+            labore, obcaecati?
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur aut consequuntur, culpa deserunt
+            ea fugiat incidunt ipsa iusto laboriosam magnam modi nostrum odit, qui quia, quibusdam ratione suscipit
+            voluptates!
+        </div>
+        <div>Consequuntur debitis deleniti dolorum eaque facilis inventore ipsum, necessitatibus nihil quas recusandae
+            repudiandae vitae voluptas? Aut deserunt dignissimos dolores esse ex excepturi laudantium molestiae
+            necessitatibus nemo, nostrum saepe sapiente voluptate.
+        </div>
+        <div>Architecto consequuntur cumque doloribus, eos fugit nobis quasi! Commodi culpa deleniti et excepturi
+            inventore ipsam itaque labore, magni quae quia repellat sint sit sunt, tempore, voluptatibus? Deserunt
+            dolores ea fuga?
+        </div>
+        <div>Ad animi aspernatur at atque autem cum, delectus dignissimos distinctio eos id illo incidunt iste magnam,
+            modi molestias natus nesciunt odit optio porro quae quia reiciendis sit soluta voluptas voluptatem!
+        </div>
+        <div>Aperiam beatae cupiditate dicta ea eaque earum eos excepturi expedita incidunt ipsum laboriosam maxime
+            molestias natus necessitatibus nihil officiis pariatur placeat porro praesentium provident quas, quos
+            suscipit velit vero voluptatem!
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

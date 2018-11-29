@@ -1,19 +1,29 @@
-body {
-
-    background-image: radial-gradient(
-            hsl(100, 90%, 60%),
-            hsl(100, 90%, 45%),
-            hsl(100, 90%, 30%),
-            hsl(100, 90%, 15%),
-            hsl(100, 90%, 10%)
-    );
+body{
+    background: linear-gradient(
+            hsl(200, 90%, 60%),
+            hsl(220, 90%, 45%),
+            hsl(240, 90%, 30%),
+            hsl(260, 90%, 15%),
+            hsl(2800, 90%, 10%)
+    ) no-repeat;
     font-size: 1.6em;
+    color: #ffffff;
+}
+
+h1,h2,h3{
+    font-family: "Lucida Console";
 }
 
 .container {
-    margin-top: 15px;
-    border: 1px solid black;
-    background: hsla(100, 12%, 90%, 78);
+    margin-top: 5px;
+
+    background-image: linear-gradient(
+            hsl(200, 90%, 60%),
+            hsl(220, 90%, 45%),
+            hsl(240, 90%, 30%),
+            hsl(260, 90%, 15%),
+            hsl(2800, 90%, 10%)
+    );
 }
 
 .mymenu {

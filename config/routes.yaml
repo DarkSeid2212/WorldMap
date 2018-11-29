@@ -14,4 +14,29 @@ property.show:
     path: /biens/{slug}-{id}
     controller: App\Controller\PropertyController::show
     requirements:
+       id: '\d+'
        slug: '[a-z0-9\-]+'
+
+# Hera are all the routes for Administration
+
+admin.index:
+    path: /admin
+    controller: App\Controller\Admin\AdminPropertyController::index
+
+admin.edit:
+    path: /admin/edit/{id}
+    controller: App\Controller\Admin\AdminPropertyController::edit
+    requirements:
+        id: '\d+'
+    methods: 'GET|POST'
+
+admin.add:
+    path: /admin/add
+    controller: App\Controller\Admin\AdminPropertyController::add
+
+admin.delete:
+    path: /admin/edit/{id}
+    controller: App\Controller\Admin\AdminPropertyController::delete
+    requirements:
+        id: '\d+'
+    methods: 'DELETE'

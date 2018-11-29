@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as  Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\IencliRepository")
@@ -11,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Iencli
 {
     const HEAT = [
-        '0' => 'chalèr',
-        '1' => 'ya bon vent même'
+        '0' => 'Ventilateur',
+        '1' => 'Climatiseur'
     ];
 
     /**
@@ -33,6 +34,7 @@ class Iencli
     private $description;
 
     /**
+     * @Assert\Range(min=10, max=450)
      * @ORM\Column(type="integer")
      */
     private $surface;
