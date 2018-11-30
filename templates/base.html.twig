@@ -18,9 +18,17 @@
             <li><a href="{{ path('home') }}">WorldMap</a></li>
             <li><a href="{{ path('admin.index') }}">Admin</a></li>
             <li><a href="">Listes Complete</a></li>
-            <li><a href="#">Ajouter</a></li>
+            {% if  app.user%}
+            <li><a href="{{ path('logout') }}">Deconnexion</a></li>
+            {% endif %}
         </ul>
     </div>
+
+    {% block footer %}<footer class="row">
+        <div class="col-lg-12">
+            <p>Made with Heart</p>
+        </div>
+    </footer>{% endblock %}
 {% endblock %}
 {% block javascripts %}{% endblock %}
 {#<script src="{{ asset('js/bootstrap.js') }}"></script>

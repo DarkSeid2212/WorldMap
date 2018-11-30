@@ -5,10 +5,12 @@ body{
             hsl(240, 90%, 30%),
             hsl(260, 90%, 15%),
             hsl(2800, 90%, 10%)
-    ) no-repeat;
+    ) space;
     font-size: 1.6em;
     color: #ffffff;
+    min-height: 1280px;
 }
+
 
 h1,h2,h3{
     font-family: "Lucida Console";
@@ -24,6 +26,7 @@ h1,h2,h3{
             hsl(260, 90%, 15%),
             hsl(2800, 90%, 10%)
     );
+    min-height: 1080px;
 }
 
 .mymenu {

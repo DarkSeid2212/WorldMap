@@ -17,7 +17,7 @@ property.show:
        id: '\d+'
        slug: '[a-z0-9\-]+'
 
-# Hera are all the routes for Administration
+# Here are all the routes for Administration
 
 admin.index:
     path: /admin
@@ -40,3 +40,12 @@ admin.delete:
     requirements:
         id: '\d+'
     methods: 'DELETE'
+
+# Here are the routes for loggin
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+logout:
+    path: /logout
