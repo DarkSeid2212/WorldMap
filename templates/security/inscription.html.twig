@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <style>
+        .contenu {
+            margin: 220px 0 0 290px;
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="site-header">Inscrivez vous !!!</h1>
+        <div class="contenu mt-4">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-lg-6 "> {{ form_row(form.username) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 "> {{ form_row(form.password) }}</div>
+            </div>
+            {{ form_rest(form) }}
+            <button class="btn btn-primary" type="submit">Bienvenue</button>
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+
+
+{% endblock %}

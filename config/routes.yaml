@@ -49,3 +49,8 @@ login:
 
 logout:
     path: /logout
+
+
+inscription:
+    path: /signup
+    controller:  App\Controller\SecurityController::inscription
